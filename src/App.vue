@@ -121,6 +121,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import moment from 'moment'
 
 const weibo = ref('@·RCHE·')
 
@@ -135,18 +136,8 @@ setInterval(() => {
   }, 3000)
 }, 12000)
 
-const start = new Date()
-function timer(start) {
-  var now = new Date()
-  var det = now - start
-  console.log(det)
-  now.setTime(det)
-  now.setHours(0)
-  timing.value = now.toLocaleTimeString()
-}
-
 setInterval(() => {
-  timer(start)
+  timing.value = moment().format('HH:mm:ss')
 }, 1000)
 </script>
 
